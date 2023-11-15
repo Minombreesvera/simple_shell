@@ -16,7 +16,7 @@ char *my_getline(void)
 	/* If the buffer is empty, read more characters */
 		if (placement == bytesread)
 	{
-		bytesread = read(STDIN_FILENO, buffer, BUFFER_SIZE)
+		bytesread = read(STDIN_FILENO, buffer, BUFFER_SIZE);
 			placement = 0;
 		/* If there are no more characters to read, break the loop */
 		if (bytesread <= 0)
@@ -28,13 +28,11 @@ char *my_getline(void)
 		while (placement < bytesread && buffer[placement] != '\n')
 	{
 		dot = realloc(dot, vera + 2);
-		/* +2 to accommodate the new character and null terminator */
 		dot[vera++] = buffer[placement++];
 	}
-	/* If a newline is encountered, add it to the line and break the loop */
 		if (placement < bytesread && buffer[placement] == '\n')
 	{
-		dot  = realloc(done, vera + 2);
+		dot  = realloc(dot, vera + 2);
 		dot[vera++] = buffer[placement++];
 		dot[vera] = '\0';
 			break;
