@@ -14,3 +14,12 @@
 #include <sys/resource.h>
 #include <signal.h>
 #include <dirent.h>
+
+#define MAX_COMMAND_LENGTH 100
+#define MAX_PATH_LENGTH 100
+
+void write_ken(char *ken);
+void display_prompt();
+int check_command_exists(char *command, char **envp);
+
+#endif
